@@ -1,4 +1,3 @@
 *
-
 !.gitignore
-!stack_bot/*
+!stack_bot
