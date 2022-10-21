@@ -48,13 +48,13 @@ class Table(Generic[T]):
             return columns
 
         session.create_table(
-            path=self.driver.database + "/" + self.name,
+            path=f"{self.driver.database}/{self.name}",
             table_description= \
                 ydb.TableDescription() \
                     .with_primary_key(self.member_class.primary_key())
                     .with_columns(
-                    *to_columns(self.member_class)
-                )
+                        *to_columns(self.member_class)
+                    )
         )
 
     def __select(self, session: ydb.Session, condition: str = None) -> List[T]:

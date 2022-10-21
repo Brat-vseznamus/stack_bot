@@ -6,7 +6,6 @@ from stack_bot.src.state_base.state_bot import StateBot
 
 botState = {}
 
-
 def register_bot(properties_file: str):
     bot().register_bot(properties_file)
 
